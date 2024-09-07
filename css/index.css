@@ -14,6 +14,13 @@
     color: var(--white);
     position: relative;
 
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 25px;
+    }
+
     .sub__container {
         width: 800px;
         height: 180px;
