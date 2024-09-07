@@ -1,0 +1,89 @@
+@import "css/root.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, var(--black), var(--dark-purple));
+    color: var(--white);
+    position: relative;
+
+    .sub__container {
+        width: 800px;
+        height: 180px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        .sub__container--clock {
+            width: inherit;
+            height: inherit;
+            background: var(--rgba);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-backdrop-filter: blur(40px); /* this code is to ensure that the backdrop filter works in Safari web-browser*/
+            backdrop-filter: blur(40px); /* this code works in Chrome & Firefox */
+
+            .clock__HMS, .clock__colon {
+                font-size: 70px;
+                width: 110px;
+                display: inline-block;
+                text-align: center;
+                position: relative;
+                padding: 0 0 15px 0;
+            }
+
+            .clock::after {
+                font-size: 16px;
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .hrs::after {
+                content: 'HOURS';
+            }
+
+            .min::after {
+                content: 'MINS';
+            }
+
+            .sec::after {
+                content: 'SEC';
+            }
+        }
+    }
+
+    .sub__container::before {
+        content: '';
+        width: 180px;
+        height: 180px;
+        background: var(--red);
+        border-radius: 5px;
+        position: absolute;
+        left: -50px;
+        top: -50px;
+        z-index: -1;
+    }
+
+    .sub__container::after {
+        content: '';
+        width: 180px;
+        height: 180px;
+        background: var(--blue);
+        border-radius: 50%;
+        position: absolute;
+        right: -50px;
+        bottom: -50px;
+        z-index: -1;
+    }
+}
